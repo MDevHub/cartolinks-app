@@ -48,7 +48,7 @@ const Card = () => {
       </Swiper>
 
       {/* Custom navigation buttons */}
-      <div className="absolute bottom-[-6] mt-1 right-3 flex gap-2 z-10">
+      <div className="absolute bottom-[-9] mt-1 right-3 flex gap-2 z-10">
         <button className="custom-prev w-6 h-6 flex items-center justify-center rounded-full border bg-gray-200 dark:bg-gray-800">
           <Icon icon="lucide:chevron-left" className="text-xl cursor-pointer" />
         </button>

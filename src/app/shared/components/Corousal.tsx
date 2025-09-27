@@ -79,7 +79,7 @@ const Corousal = () => {
       </Swiper>
 
       {/* external pagination container */}
-      <div className="custom-pagination cursor-pointer absolute -bottom-6 left-auto right-3 flex gap-2 z-10"></div>
+      <div className="custom-pagination cursor-pointer absolute -bottom-6 right-3 flex gap-2 z-10"></div>
 
       <style jsx global>{`
         .custom-pagination .swiper-pagination-bullet {
