@@ -5,6 +5,7 @@
    import { useEffect, useState } from "react";
    import MobileNav from "@/app/shared/components/DefaultLayout/MobileNav";
    import Link from "next/link";
+   import Image from "next/image";
 
    const NavBar = () => {
    const { resolvedTheme } = useTheme();
@@ -26,10 +27,12 @@
          <nav className="hidden lg:grid w-full mx-auto max-w-[1400px] grid-cols-3 items-center px-6 py-3">
          {/* Left: Logo */}
          <div className="flex items-center gap-2 justify-start">
-            <img
+            <Image
                src="/images/logo.webp"
                alt="Logo"
-               className="w-[1rem] h-[1rem] lg:h-[2rem] lg:w-[2rem]"
+               width={35}
+               height={35}
+               priority
             />
             <span className="font-bold lg:text-[32px] lg:leading-[40px] lg:tracking-[-1.28px]">
                Cartolinks

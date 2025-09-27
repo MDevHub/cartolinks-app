@@ -3,6 +3,7 @@
    import { Icon } from "@iconify/react";
    import Link from "next/link";
    import ThemeToggle from "@/app/shared/components/ThemeToggle";
+   import Image from "next/image";
 
   import homeIcon from "@iconify/icons-lucide/home";
    import imageIcon from "@iconify/icons-lucide/image"; // ✅ not "images"
@@ -21,7 +22,13 @@
          <nav className="lg:hidden w-full flex justify-between items-center px-4 py-3">
          {/* Left: Logo */}
          <div className="flex items-center gap-2">
-            <img src="/images/logo.webp" alt="Logo" className="w-6 h-6" />
+             <Image
+               src="/images/logo.webp"
+               alt="Logo"
+               width={25}
+               height={25}
+               priority
+            />
             <span className="font-bold text-lg">Cartolinks</span>
          </div>
 

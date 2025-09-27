@@ -1,6 +1,5 @@
 "use client";
 import { useTheme as useNextTheme } from "next-themes";
-import { useEffect, useState } from "react";
 
 
 const useTheme = () => {

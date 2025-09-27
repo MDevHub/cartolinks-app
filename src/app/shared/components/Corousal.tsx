@@ -81,7 +81,7 @@ const Corousal = () => {
         .custom-pagination .swiper-pagination-bullet {
           background: #ccc;
           left: auto;
-          right: auto;
+          right: 0.75rem;
           opacity: 0.6;
           width: 8px;
           height: 8px;
