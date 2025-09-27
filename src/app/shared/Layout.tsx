@@ -1,10 +1,10 @@
 import React from 'react'
-import ThemeToggle from '@/app/shared/components/ThemeToggle'
+import Home from '@/app/home/page'
 
 const Layout = () => {
   return (
-    <div>Layout
-      <ThemeToggle />
+    <div>
+      <Home />
     </div>
   )
 }

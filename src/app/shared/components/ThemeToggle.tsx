@@ -1,12 +1,18 @@
 "use client";
-import React, { type FC } from "react";
+import React, { type FC, useEffect, useState } from "react";
 import { Icon } from "@iconify/react";
-import useTheme from "@/app/shared/hooks/useTheme";
+import { useTheme } from "@/app/shared/themeProvider/ThemeContext";
 
 interface ThemeSwitcherProps extends React.LabelHTMLAttributes<HTMLLabelElement> {}
 
 const ThemeToggle: FC<ThemeSwitcherProps> = ({ className: classes = "" }) => {
+
   const { toggleTheme, isDark } = useTheme();
+  const [mounted, setMounted] = useState(false);
+  useEffect(() => {
+    setMounted(true);
+  }, []);
+  if (!mounted) return null;
 
   return (
     <label className={`mask mask-blob relative block overflow-hidden ${classes}`}>
@@ -17,7 +23,7 @@ const ThemeToggle: FC<ThemeSwitcherProps> = ({ className: classes = "" }) => {
         checked={isDark}
         onChange={() => {}}
       />
-      <span className="relative block h-9 w-9 bg-white text-lg dark:bg-muted-800 peer-checked:[&>.moon-icon]:opacity-100 peer-checked:[&>.moon-icon]:[transform:translate(-45%,-50%)] peer-checked:[&>.sun-icon]:opacity-0 peer-checked:[&>.sun-icon]:[transform:translate(-45%,-150%)]">
+      <span className="relative block h-9 w-9 bg-white dark:bg-gray-800 rounded-full text-lg dark:bg-muted-800 peer-checked:[&>.moon-icon]:opacity-100 peer-checked:[&>.moon-icon]:[transform:translate(-45%,-50%)] peer-checked:[&>.sun-icon]:opacity-0 peer-checked:[&>.sun-icon]:[transform:translate(-45%,-150%)]">
         <Icon
           icon="lucide:sun"
           className="sun-icon pointer-events-none absolute start-1/2 top-1/2 block -translate-x-[48%] -translate-y-[50%] text-yellow-400 opacity-100 transition-all duration-300 [&>*]:fill-yellow-400"

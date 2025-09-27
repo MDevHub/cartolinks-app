@@ -2,19 +2,16 @@
 import { useTheme as useNextTheme } from "next-themes";
 import { useEffect, useState } from "react";
 
-const useTheme = () => {
-  const { theme, setTheme, resolvedTheme } = useNextTheme();
-  const [isDark, setIsDark] = useState(false);
 
-  useEffect(() => {
-    setIsDark(resolvedTheme === "dark");
-  }, [resolvedTheme]);
+const useTheme = () => {
+  const { setTheme, resolvedTheme } = useNextTheme();
+  const isDark = resolvedTheme === "dark";
 
   const toggleTheme = () => {
-    setTheme(resolvedTheme === "dark" ? "light" : "dark");
+    setTheme(isDark ? "light" : "dark");
   };
 
-  return { isDark, toggleTheme, theme };
+  return { isDark, toggleTheme, resolvedTheme };
 };
 
 export default useTheme;
