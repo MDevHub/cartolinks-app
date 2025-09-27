@@ -3,15 +3,16 @@ import React, { type FC, useEffect, useState } from "react";
 import { Icon } from "@iconify/react";
 import { useTheme } from "@/app/shared/themeProvider/ThemeContext";
 
-interface ThemeSwitcherProps extends React.LabelHTMLAttributes<HTMLLabelElement> {}
+type ThemeSwitcherProps = React.LabelHTMLAttributes<HTMLLabelElement>;
 
 const ThemeToggle: FC<ThemeSwitcherProps> = ({ className: classes = "" }) => {
-
   const { toggleTheme, isDark } = useTheme();
   const [mounted, setMounted] = useState(false);
+
   useEffect(() => {
     setMounted(true);
   }, []);
+
   if (!mounted) return null;
 
   return (

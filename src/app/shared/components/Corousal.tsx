@@ -5,6 +5,8 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import { Pagination, Autoplay } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/pagination";
+import Image from "next/image";
+
 
 const images = [
   "/images/naruto1.jpg",
@@ -40,12 +42,14 @@ const Corousal = () => {
         {images.map((src, index) => (
           <SwiperSlide key={index} className="relative">
             {/* Background Image */}
-            <img
+           <div className="relative w-full h-[400px]">
+            <Image
               src={src}
               alt={`Naruto ${index + 1}`}
-              className="w-full h-[400px] object-cover rounded-xl"
+              fill
+              className="object-cover rounded-xl"
             />
-
+          </div>
             {/* Overlay content */}
             <div className="absolute inset-0 flex flex-col justify-between p-3 sm:p-6 text-white">
               {/* Center Title */}
@@ -75,7 +79,7 @@ const Corousal = () => {
       </Swiper>
 
       {/* external pagination container */}
-      <div className="custom-pagination cursor-pointer absolute -bottom-6 right-3 flex gap-2 z-10"></div>
+      <div className="custom-pagination cursor-pointer absolute -bottom-6 left-auto right-3 flex gap-2 z-10"></div>
 
       <style jsx global>{`
         .custom-pagination .swiper-pagination-bullet {

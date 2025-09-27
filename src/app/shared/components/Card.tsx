@@ -6,6 +6,8 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/navigation";
+import Image from "next/image";
+
 
 const cards = [
   { id: 1, title: "Card One", image: "/images/wine1.jpg" },
@@ -32,11 +34,14 @@ const Card = () => {
         {cards.map((card) => (
           <SwiperSlide key={card.id}>
             <div className="bg-white dark:bg-gray-800 shadow-md rounded-xl overflow-hidden relative">
-              <img
-                src={card.image}
-                alt={card.title}
-                className="w-full h-[400px] object-cover"
-              />
+              <div className="relative w-full h-[400px]">
+                <Image
+                  src={card.image}
+                  alt={card.title}
+                  fill
+                  className="object-cover rounded-xl"
+                />
+              </div>
             </div>
           </SwiperSlide>
         ))}
