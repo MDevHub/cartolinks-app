@@ -79,13 +79,13 @@ const Corousal = () => {
       </Swiper>
 
       {/* external pagination container */}
-      <div className="custom-pagination cursor-pointer absolute -bottom-6 right-3 flex gap-2 z-10"></div>
+      <div className="absolute -bottom-4 right-3 flex justify-end w-full z-10">
+        <div className="custom-pagination flex gap-2"></div>
+      </div>
 
       <style jsx global>{`
         .custom-pagination .swiper-pagination-bullet {
           background: #ccc;
-          left: auto;
-          right: 0.75rem;
           opacity: 0.6;
           width: 8px;
           height: 8px;
@@ -97,6 +97,7 @@ const Corousal = () => {
           opacity: 1;
         }
       `}</style>
+
     </div>
   );
 };
